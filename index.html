@@ -1,57 +1,247 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Tangible Socks Pattern</title>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+	<!-- Tangle -->
+	<script type="text/javascript" src="Tangle.js"></script>
 
-    <title>Baby-legs by sundaykofax</title>
-  </head>
+	<!-- TangleKit (optional) -->
+	<link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+	<link rel="stylesheet" href="stylesheets/stylesheet.css" type="text/css">
 
-  <body>
+	<script type="text/javascript" src="TangleKit/mootools.js"></script>
+	<script type="text/javascript" src="TangleKit/sprintf.js"></script>
+	<script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
+	<script type="text/javascript" src="TangleKit/TangleKit.js"></script>
 
-    <header>
-      <div class="container">
-        <h1>Baby-legs</h1>
-        <h2>Knitting pattern for baby legwarmers</h2>
+	<!-- My additions to the TangleKit -->
+	<script type="text/javascript" src="TangleAdditions.js"></script>
 
-        <section id="downloads">
-          <a href="https://github.com/sundaykofax/baby-legs/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/sundaykofax/baby-legs/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/sundaykofax/baby-legs" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+	<!-- example -->
+	<script type="text/javascript">
+
+		function setUpTangle () {
+
+			var element = document.getElementById("example");
+
+			var tangle = new Tangle(element, {
+				initialize: function () {
+					this.cookies = 4;
+					this.caloriesPerCookie = 50;
+					this.size = 36;
+					this.minStitches = 60;
+					this.boomerangForthRow = 3;
+					this.boomerangForthRowReverse = 3;
+					this.boomerangHeelStitchesStart = 10;
+					this.boomerangHeelStitchesMiddle = 10;
+					this.boomerangHeelStitchesEnd = 10;
+					this.footLengthTillCapStart = 18.5;
+					this.decreaseEveryFourRowsRepetitions = 1;
+					this.decreasesEveryThreeRowsRepetitions = 2;
+					this.decreasesEveryTwoRowsRepetitions =  3;
+					this.decreasesEveryRowRepetitions =  6;
+					this.totalFootLength = 23.5;
+				},
+				update: function () {
+					this.stitches = this.minStitches;
+					this.foot = this.footLengthTillCapStart;
+					this.repeatFour = this.decreaseEveryFourRowsRepetitions;
+					this.repeatThree = this.decreasesEveryThreeRowsRepetitions;
+					this.repeatTwo = this.decreasesEveryTwoRowsRepetitions;
+					this.repeatOne = this.decreasesEveryRowRepetitions;
+
+					// Size dependent differences;
+					switch(this.size) {
+					case 38, 39:
+						this.foot += 1.5;
+						break;
+					case 40, 41:
+						this.foot += 2.5;
+						this.repeatOne += 1;
+						this.stitches += 4;
+						break;
+					case 42, 43:
+						this.foot += 3.5;
+						this.repeatOne += 1;
+						this.stitches += 4;
+						break;
+					case 44, 45:
+						this.foot += 4;
+						this.repeatTwo += 1;
+						this.repeatOne += 1;
+						this.stitches += 8;
+						break;
+					case 46, 47:
+						this.foot += 5.5;
+						this.repeatTwo += 1;
+						this.repeatOne += 2;
+						this.stitches += 12;
+						break;
+					}
+
+					this.needleStitches = parseInt(this.stitches / 4, 10);
+					this.heel = parseInt(this.stitches / 2, 10);
+
+
+					// Heel rows - dependent differences
+					// Way
+					this.boomerangStitches = this.needleStitches - (this.boomerangForthRow - 2);
+
+					this.boomerangBackRow = this.boomerangForthRow + 1;
+					this.boomerangBackRowReverse = this.boomerangForthRowReverse + 1;
+					this.boomerangEndRow = this.boomerangHeelStitchesMiddle + 3;
+					this.boomerangMiddleHalf = (this.boomerangHeelStitchesMiddle / 2);
+					this.boomerangMiddleOutskirts = this.needleStitches - this.boomerangMiddleHalf + 1;
+
+					// Way back
+					this.boomerangStitchesBack = this.boomerangHeelStitchesMiddle + (this.boomerangForthRowReverse * 2 - 4);
+				}
+			});
+		}
+
+	</script>
+</head>
+
+<body onload="setUpTangle();">
+	<header>
+		  <div class="container">
+        <h1>Socks</h1>
+        <h2>Knitting pattern for socks</h2>
+
       </div>
-    </header>
+	</header>
+	<div id="example" class="container">
+		<section id="main_content">
 
-    <div class="container">
-      <section id="main_content">
-        <h3>Welcome to part of the KnitHub.</h3>
+		<h1>Socks</h1>
+		<dl>
+			<dt>Difficulty</dt>
+				<dd>medium</dd>
+			<dt>Size</dt>
+				<dd>shoes <span data-var="size" class="TKAdjustableNumber" data-min="36" data-max="47"></span></dd>
+			<dt>Yarn</dt>
+				<dd>75% wool, 25% Polyester</dd>
+			<dt>Needles</dt>
+				<dd>Set of Five size 2 - 3</dd>
+		</dl>
 
-<p>The goal is to get knitters using GitHub to:</p>
+		<strong>Instructions</strong>
+		<div class="instructions">
+			<section id="shaft">
 
-<ul>
-<li>publish patterns</li>
-<li>take pull requests for pattern fixes</li>
-<li>encourage forking, so other knitters can create variations of patterns</li>
-</ul><h2>Baby legwarmers</h2>
+			<h2>Shaft</h2>
 
-<p>Other than the scary factor of knitting in the round, baby legwarmers are an easy project. Once you get the stitches onto your needles and get a few rows done, I find it faster than knitting flat.</p>
+			<dl>
+				<dt>Row 1</dt>
+					<dd>cast on <strong data-var="stitches"></strong> stitches. </dd>
+				<dt>Row 2</dt>
+					<dd>join in the round, <em>k1, p1</em> to end (knit up the tail as you go,
+				so you don't have to weave in the end)</dd>
+				<dt>Row 3 and on</dt>
+					<dd><em>k1, p1</em> for about <strong>8cm</strong> then continue knitting straight on
+				until the shaft reaches the desired length.</dd>
+			</dl>
+			</section>
 
-<p>You need to know how to:</p>
+			<section id="heel">
+				<h2>Heel</h2>
 
-<ul>
-<li>cast on (and get stitches onto double pointed needles or round needles)</li>
-<li>join in the round</li>
-<li>knit and purl</li>
-<li>bind off</li>
-<li>weave in ends</li>
-</ul>
-      </section>
-    </div>
+				<p>Knit along the stitches of the <em>first</em> and <em>fourth</em> needle.</p>
 
-    
-  </body>
+
+				<dl>
+					<dt>Row 1 (forth)</dt>
+					<dd> Knit <strong data-var="needleStitches"> stitches</strong> of the first needle,
+  		turn the work around</dd>
+  				<dt>Row 2 (back)</dt>
+  				<dd>do the <em>double stitch</em>, purl <strong data-var="needleStitches"> stitches</strong> of the fourth needle,
+		turn the work around.</dd>
+
+					<dt>Row <span data-var="boomerangForthRow boomerangMiddleOutskirts"
+						 class="TKConstraintAdjustableNumber" 
+					data-min="3"></span> (forth)</dt>
+					<dd>do the <em>double stitch</em>, knit <strong data-var="boomerangStitches"> stitches</strong> of the first needle (do NOT knit any double stitches),
+  		turn the work around</dd>
+
+  				<dt>Row <strong data-var="boomerangBackRow"></strong> (back)</dt>
+  				<dd>do the <em>double stitch</em>, purl <strong data-var="boomerangStitches"> stitches</strong> of the fourth needle,
+		turn the work around. Do the <em>double stitch</em> again.</dd>
+
+					<dt>Row <strong data-var="boomerangEndRow"></strong> and the following</dt>
+					<dd>Knit straight across all stitches of all needles picking up the <em>double stitches</em> as one.</dd>
+				</dl>
+
+
+				<p>Now start again knitting decreased rows with <em>double stitches</em> this time working from
+				the inside to the outside.</p>
+
+
+				<dl>
+					<dt>Row 1 (forth)</dt>
+					<dd>Knit <strong data-var="boomerangMiddleHalf"> stitches</strong> of the first needle,
+  		turn the work around</dd>
+
+  				<dt>Row 2 (back)</dt>
+  				<dd>do the <em>double stitch</em>, purl <strong data-var="boomerangMiddleHalf"> stitches</strong> of the fourth needle,
+		turn the work around</dd>
+
+					<dt>Row <span data-var="boomerangForthRowReverse boomerangMiddleOutskirts"
+						 class="TKConstraintAdjustableNumber" 
+					data-min="3"></span> (forth)</dt>
+					<dd>do the <em>double stitch</em>, knit <strong data-var="boomerangStitchesBack"> stitches</strong> until you reach a <em>double stitch</em>, knit it and knit the next one as well,
+  		turn the work around</dd>
+
+					<dt>Row <strong data-var="boomerangBackRowReverse"></strong> (back)</dt>  				
+					<dd>do the <em>double stitch</em>, Purl <strong data-var="boomerangStitchesBack"> stitches</strong> until you reach a <em>double stitches</em>, purl it and purl the next stitch as well,
+			turn the work around</dd>
+
+					<dt>Row <strong data-var="boomerangEndRow"></strong> and the following</dt>
+					<dd>Knit straight across all stitches of all needles picking knit/purl a <em>double stitch</em> in the former row.</dd>
+				</dl>
+			</section>
+
+			<section id="foot">
+				<h2>Foot</h2>
+
+				<p>Knit straight until heel to cap start measures <strong data-var="foot"> cm</strong>.</p>
+			</section>
+
+			<section id="cap">
+				<h2>Cap</h2>
+
+				<p>
+					For the first and the third needle knit until the third last stitch, then knit the
+					following to stitches as one.
+
+					For the second and fourth needler knit the first stitch and then purl over the next two stitches.
+
+					Do this until you have only <strong>8</strong> stitches left.
+
+				<p>
+					Do <strong>3</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatFour"> times</strong>.
+
+				<p>
+					Do <strong>2</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatThree"> times</strong>.
+
+				<p>
+					Do <strong>1</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatTwo"> times</strong>.
+
+				<p>
+					Do <strong data-var="repeatOne"> rows</strong> with decreases.
+			</section>
+
+
+
+
+
+
+				<p>
+					Make one sock, choose a different colored yarn, repeat, enjoy!
+		</div>
+		</section>
+	</div>
+</body>
 </html>
