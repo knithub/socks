@@ -20,8 +20,8 @@
 /* TKToggle */
 
 .TKToggle {
-	color: #46f;
-	border-bottom: 1px dashed #46f;
+	color: #63c0f5;
+	border-bottom: 1px dashed #63c0f5;
 	cursor: pointer;
 }
 
@@ -30,21 +30,23 @@
 
 .TKAdjustableNumber, .TKConstraintAdjustableNumber {
 	position:relative;
-	color: #46f;
-	border-bottom: 1px dashed #46f;
+	color: #63c0f5;
+	border-bottom: 1px dashed #63c0f5;
 }
 
 .TKAdjustableNumberHover {
 }
 
 .TKAdjustableNumberDown {
-	color: #00c;
-	border-bottom: 1px dashed #00c;
+	color: #b5e853;
+	border-bottom: 1px dashed #b5e853;
 }
 
 .TKAdjustableNumberHelp {
 	position:absolute;
-	color: #00f;
+	color: #b5e853;
+	background-color: black;
+	padding: 2px;
 	font: 9px "Helvetica-Neue", "Arial", sans-serif;
 }
 

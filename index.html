@@ -2,13 +2,16 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Tangle document</title>
+	<title>Tangible Socks Pattern</title>
 
 	<!-- Tangle -->
 	<script type="text/javascript" src="Tangle.js"></script>
 
 	<!-- TangleKit (optional) -->
 	<link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+	<link rel="stylesheet" href="stylesheets/stylesheet.css" type="text/css">
+
 	<script type="text/javascript" src="TangleKit/mootools.js"></script>
 	<script type="text/javascript" src="TangleKit/sprintf.js"></script>
 	<script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
@@ -103,97 +106,142 @@
 </head>
 
 <body onload="setUpTangle();">
-	<div id="example">
+	<header>
+		  <div class="container">
+        <h1>Socks</h1>
+        <h2>Knitting pattern for socks</h2>
+
+      </div>
+	</header>
+	<div id="example" class="container">
+		<section id="main_content">
+
 		<h1>Socks</h1>
 		<dl>
 			<dt>Difficulty</dt>
 				<dd>medium</dd>
-
 			<dt>Size</dt>
 				<dd>shoes <span data-var="size" class="TKAdjustableNumber" data-min="36" data-max="47"></span></dd>
 			<dt>Yarn</dt>
 				<dd>75% wool, 25% Polyester</dd>
 			<dt>Needles</dt>
 				<dd>Set of Five size 2 - 3</dd>
-
-
 		</dl>
 
 		<strong>Instructions</strong>
-		<pre>
-Shaft
+		<div class="instructions">
+			<section id="shaft">
 
-Row 1: cast on <strong data-var="stitches"></strong> stitches. 
-Row 2: join in the round, <em>k1, p1</em> to end (knit up the tail as you go,
-	so you don't have to weave in the end)
-Row 3 and on: <em>k1, p1</em> for about <strong>8cm</strong> then continue knitting straight on
-	until the shaft reaches the desired length.
+			<h2>Shaft</h2>
 
-Heel
+			<dl>
+				<dt>Row 1</dt>
+					<dd>cast on <strong data-var="stitches"></strong> stitches. </dd>
+				<dt>Row 2</dt>
+					<dd>join in the round, <em>k1, p1</em> to end (knit up the tail as you go,
+				so you don't have to weave in the end)</dd>
+				<dt>Row 3 and on</dt>
+					<dd><em>k1, p1</em> for about <strong>8cm</strong> then continue knitting straight on
+				until the shaft reaches the desired length.</dd>
+			</dl>
+			</section>
 
-Knit along the stitches of the <em>first</em> and <em>fourth</em> needle.
+			<section id="heel">
+				<h2>Heel</h2>
 
-Row 1 (forth): Knit <strong data-var="needleStitches"> stitches</strong> of the first needle,
-  		turn the work around
-
-Row 2 (back): do the <em>double stitch</em>, purl <strong data-var="needleStitches"> stitches</strong> of the fourth needle,
-		turn the work around.
+				<p>Knit along the stitches of the <em>first</em> and <em>fourth</em> needle.</p>
 
 
-Row <span data-var="boomerangForthRow boomerangMiddleOutskirts"
+				<dl>
+					<dt>Row 1 (forth)</dt>
+					<dd> Knit <strong data-var="needleStitches"> stitches</strong> of the first needle,
+  		turn the work around</dd>
+  				<dt>Row 2 (back)</dt>
+  				<dd>do the <em>double stitch</em>, purl <strong data-var="needleStitches"> stitches</strong> of the fourth needle,
+		turn the work around.</dd>
+
+					<dt>Row <span data-var="boomerangForthRow boomerangMiddleOutskirts"
 						 class="TKConstraintAdjustableNumber" 
-					data-min="3"></span> (forth): do the <em>double stitch</em>, knit <strong data-var="boomerangStitches"> stitches</strong> of the first needle (do NOT knit any double stitches),
-  		turn the work around
+					data-min="3"></span> (forth)</dt>
+					<dd>do the <em>double stitch</em>, knit <strong data-var="boomerangStitches"> stitches</strong> of the first needle (do NOT knit any double stitches),
+  		turn the work around</dd>
 
-Row <strong data-var="boomerangBackRow"></strong> (back): do the <em>double stitch</em>, purl <strong data-var="boomerangStitches"> stitches</strong> of the fourth needle,
-		turn the work around. Do the <em>double stitch</em> again.
+  				<dt>Row <strong data-var="boomerangBackRow"></strong> (back)</dt>
+  				<dd>do the <em>double stitch</em>, purl <strong data-var="boomerangStitches"> stitches</strong> of the fourth needle,
+		turn the work around. Do the <em>double stitch</em> again.</dd>
 
-Row <strong data-var="boomerangEndRow"></strong> and the following: Knit straight across all stitches of all needles picking up the <em>double stitches</em> as one.
+					<dt>Row <strong data-var="boomerangEndRow"></strong> and the following</dt>
+					<dd>Knit straight across all stitches of all needles picking up the <em>double stitches</em> as one.</dd>
+				</dl>
 
-Now start again knitting decreased rows with <em>double stitches</em> this time working from
-the inside to the outside.
+
+				<p>Now start again knitting decreased rows with <em>double stitches</em> this time working from
+				the inside to the outside.</p>
 
 
-Row 1 (forth): Knit <strong data-var="boomerangMiddleHalf"> stitches</strong> of the first needle,
-  		turn the work around
+				<dl>
+					<dt>Row 1 (forth)</dt>
+					<dd>Knit <strong data-var="boomerangMiddleHalf"> stitches</strong> of the first needle,
+  		turn the work around</dd>
 
-Row 2 (back): do the <em>double stitch</em>, purl <strong data-var="boomerangMiddleHalf"> stitches</strong> of the fourth needle,
-		turn the work around
+  				<dt>Row 2 (back)</dt>
+  				<dd>do the <em>double stitch</em>, purl <strong data-var="boomerangMiddleHalf"> stitches</strong> of the fourth needle,
+		turn the work around</dd>
 
-Row <span data-var="boomerangForthRowReverse boomerangMiddleOutskirts"
+					<dt>Row <span data-var="boomerangForthRowReverse boomerangMiddleOutskirts"
 						 class="TKConstraintAdjustableNumber" 
-					data-min="3"></span> (forth): do the <em>double stitch</em>, knit <strong data-var="boomerangStitchesBack"> stitches</strong> until you reach a <em>double stitch</em>, knit it and knit the next one as well,
-  		turn the work around
+					data-min="3"></span> (forth)</dt>
+					<dd>do the <em>double stitch</em>, knit <strong data-var="boomerangStitchesBack"> stitches</strong> until you reach a <em>double stitch</em>, knit it and knit the next one as well,
+  		turn the work around</dd>
 
-Row <strong data-var="boomerangBackRowReverse"></strong> (back): do the <em>double stitch</em>, Purl <strong data-var="boomerangStitchesBack"> stitches</strong> until you reach a <em>double stitches</em>, purl it and purl the next stitch as well,
-			turn the work around
+					<dt>Row <strong data-var="boomerangBackRowReverse"></strong> (back)</dt>  				
+					<dd>do the <em>double stitch</em>, Purl <strong data-var="boomerangStitchesBack"> stitches</strong> until you reach a <em>double stitches</em>, purl it and purl the next stitch as well,
+			turn the work around</dd>
 
-Row <strong data-var="boomerangEndRow"></strong> and the following: Knit straight across all stitches of all needles picking knit/purl a <em>double stitch</em> in the former row.
+					<dt>Row <strong data-var="boomerangEndRow"></strong> and the following</dt>
+					<dd>Knit straight across all stitches of all needles picking knit/purl a <em>double stitch</em> in the former row.</dd>
+				</dl>
+			</section>
 
-Foot
+			<section id="foot">
+				<h2>Foot</h2>
 
-Knit straight until heel to cap start measures <strong data-var="foot"> cm</strong>.
+				<p>Knit straight until heel to cap start measures <strong data-var="foot"> cm</strong>.</p>
+			</section>
 
-Cap
+			<section id="cap">
+				<h2>Cap</h2>
 
-For the first and the third needle knit until the third last stitch, then knit the
-following to stitches as one.
+				<p>
+					For the first and the third needle knit until the third last stitch, then knit the
+					following to stitches as one.
 
-For the second and fourth needler knit the first stitch and then purl over the next two stitches.
+					For the second and fourth needler knit the first stitch and then purl over the next two stitches.
 
-Do this until you have only <strong>8</strong> stitches left.
+					Do this until you have only <strong>8</strong> stitches left.
 
-Do <strong>3</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatFour"> times</strong>.
+				<p>
+					Do <strong>3</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatFour"> times</strong>.
 
-Do <strong>2</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatThree"> times</strong>.
+				<p>
+					Do <strong>2</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatThree"> times</strong>.
 
-Do <strong>1</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatTwo"> times</strong>.
+				<p>
+					Do <strong>1</strong> rows without decreases and then again one with decreases, repeat this <strong data-var="repeatTwo"> times</strong>.
 
-Do <strong data-var="repeatOne"> rows</strong> with decreases.
+				<p>
+					Do <strong data-var="repeatOne"> rows</strong> with decreases.
+			</section>
 
 
-Make one sock, choose a different colored yarn, repeat, enjoy!
-		</pre>
+
+
+
+
+				<p>
+					Make one sock, choose a different colored yarn, repeat, enjoy!
+		</div>
+		</section>
 	</div>
 </body>
 </html>
