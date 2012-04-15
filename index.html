@@ -35,9 +35,8 @@
 					this.minStitches = 60;
 					this.boomerangForthRow = 3;
 					this.boomerangForthRowReverse = 3;
-					this.boomerangHeelStitchesStart = 10;
 					this.boomerangHeelStitchesMiddle = 10;
-					this.boomerangHeelStitchesEnd = 10;
+					this.boomerangHeelStitchesSide = 10;
 					this.footLengthTillCapStart = 18.5;
 					this.decreaseEveryFourRowsRepetitions = 1;
 					this.decreasesEveryThreeRowsRepetitions = 2;
@@ -48,6 +47,8 @@
 				update: function () {
 					this.stitches = this.minStitches;
 					this.foot = this.footLengthTillCapStart;
+					this.boomerangHeelMiddle = this.boomerangHeelStitchesMiddle;
+					this.boomerangHeelSide = this.boomerangHeelStitchesSide;
 					this.repeatFour = this.decreaseEveryFourRowsRepetitions;
 					this.repeatThree = this.decreasesEveryThreeRowsRepetitions;
 					this.repeatTwo = this.decreasesEveryTwoRowsRepetitions;
@@ -61,23 +62,29 @@
 					case 40, 41:
 						this.foot += 2.5;
 						this.repeatOne += 1;
+						this.boomerangHeelMiddle += 2;
 						this.stitches += 4;
 						break;
 					case 42, 43:
 						this.foot += 3.5;
 						this.repeatOne += 1;
+						this.boomerangHeelMiddle += 2;
 						this.stitches += 4;
 						break;
 					case 44, 45:
 						this.foot += 4;
 						this.repeatTwo += 1;
 						this.repeatOne += 1;
+						this.boomerangHeelMiddle += 2;
+						this.boomerangHeelSide += 1;
 						this.stitches += 8;
 						break;
 					case 46, 47:
 						this.foot += 5.5;
 						this.repeatTwo += 1;
 						this.repeatOne += 2;
+						this.boomerangHeelMiddle += 2;
+						this.boomerangHeelSide += 2;
 						this.stitches += 12;
 						break;
 					}
@@ -92,12 +99,14 @@
 
 					this.boomerangBackRow = this.boomerangForthRow + 1;
 					this.boomerangBackRowReverse = this.boomerangForthRowReverse + 1;
-					this.boomerangEndRow = this.boomerangHeelStitchesMiddle + 3;
-					this.boomerangMiddleHalf = (this.boomerangHeelStitchesMiddle / 2);
+					this.boomerangEndRow = this.boomerangHeelMiddle + 3;
+					this.boomerangMiddleHalf = (this.boomerangHeelMiddle / 2);
 					this.boomerangMiddleOutskirts = this.needleStitches - this.boomerangMiddleHalf + 1;
 
+
 					// Way back
-					this.boomerangStitchesBack = this.boomerangHeelStitchesMiddle + (this.boomerangForthRowReverse * 2 - 4);
+
+					this.boomerangStitchesBack = this.boomerangHeelMiddle + (this.boomerangForthRowReverse * 2 - 4);
 				}
 			});
 		}
